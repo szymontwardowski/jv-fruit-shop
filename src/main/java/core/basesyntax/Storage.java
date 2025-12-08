@@ -7,7 +7,7 @@ public class Storage {
 
     public static final Map<String, Integer> FruitInventory = new HashMap<>();
 
-    public static Map<String, Integer> getFruitInventory(){
+    public static Map<String, Integer> getFruitInventory() {
         return FruitInventory;
     }
 

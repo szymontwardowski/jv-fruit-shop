@@ -8,7 +8,7 @@ public class FileWriterImpl implements FileWriter {
 
     @Override
     public void output(String content, String path) {
-        try{
+        try {
             Files.writeString(Paths.get(path), content);
         } catch (IOException e) {
             throw new RuntimeException("Can't write data to file:" + path + e);

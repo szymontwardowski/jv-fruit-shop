@@ -9,7 +9,7 @@ public class FileReaderImpl implements FileReader {
 
     @Override
     public List<String> input(String path) {
-        try{
+        try {
             Files.readAllLines(Paths.get(path));
 
             return Files.readAllLines(Paths.get(path));

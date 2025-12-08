@@ -10,10 +10,13 @@ public class OperationStrategyImpl implements OperationStrategy {
         this.operationHandlers = operationHandlers;
 
     }
-        public OperationHandler getHandler(FruitTransaction.Operation operation) {
-            if(!operationHandlers.containsKey(operation)) {
-            throw new RuntimeException("Unknown operation type: " + operation);
+
+    @Override // <-- Dodano @Override
+    public OperationHandler getHandler(FruitTransaction.Operation operation) {
+        if (!operationHandlers.containsKey(operation)) {
+            // Użycie .getCode() jest lepsze, jeśli chcesz pokazać oryginalny symbol ('s', 'b', 'p')
+            throw new RuntimeException("Unknown operation type: " + operation.getCode());
         }
-            return operationHandlers.get(operation);
+        return operationHandlers.get(operation);
     }
 }

@@ -5,7 +5,7 @@ import java.util.Map;
 public class SupplyOperation implements OperationHandler {
 
     @Override
-    public void apply(FruitTransaction transaction){
+    public void apply(FruitTransaction transaction) {
         Map<String, Integer> inventory = Storage.getFruitInventory();
 
         String fruit = transaction.getFruit();

@@ -13,9 +13,9 @@ public class ReportGeneratorImpl implements ReportGenerator {
         Map<String, Integer> inventory = Storage.getFruitInventory();
 
         String reportBody = inventory.entrySet().stream()
-                .map(entry -> entry.getKey() + SEPARATOR  + entry.getValue())
-                        .collect(Collectors.joining(System.lineSeparator()));
+                .map(entry -> entry.getKey() + SEPARATOR + entry.getValue())
+                .collect(Collectors.joining(System.lineSeparator()));
 
-                        return HEADER + System.lineSeparator() + reportBody;
+        return HEADER + System.lineSeparator() + reportBody;
     }
 }

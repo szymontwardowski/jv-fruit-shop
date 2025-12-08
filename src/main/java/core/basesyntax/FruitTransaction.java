@@ -10,10 +10,12 @@ public class FruitTransaction {
         Operation(char code) {
             this.code = code;
         }
+
         public char getCode() {
             return code;
         }
     }
+
     private final Operation operation;
     private final String fruit;
     private final int quantity;
