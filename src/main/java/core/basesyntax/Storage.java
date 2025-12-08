@@ -10,6 +10,4 @@ public class Storage {
     public static Map<String, Integer> getFruitInventory() {
         return FruitInventory;
     }
-
-
 }
