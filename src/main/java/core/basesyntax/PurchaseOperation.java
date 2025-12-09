@@ -6,12 +6,31 @@ public class PurchaseOperation implements OperationHandler {
 
     @Override
     public void apply(FruitTransaction transaction) {
-        Map<String,Integer> inventory = Storage.getFruitInventory();
+        if (transaction == null) {
+            throw new RuntimeException("Transaction cannot be null.");
+        }
 
         String fruit = transaction.getFruit();
         int quantity = transaction.getQuantity();
 
+        if (fruit == null || fruit.isEmpty()) {
+            throw new RuntimeException("Fruit name cannot be null or empty in transaction: "
+                    + transaction);
+        }
+
+        if (quantity < 0) {
+            throw new RuntimeException("Quantity for PURCHASE cannot be negative: "
+                    + quantity);
+        }
+
+        Map<String, Integer> inventory = Storage.getFruitInventory();
+
         int currentQuantity = inventory.getOrDefault(fruit, 0);
+
+        if (quantity > currentQuantity) {
+            throw new RuntimeException("Insufficient stock to purchase " + quantity
+                    + " of " + fruit + ". Current stock: " + currentQuantity);
+        }
 
         int newQuantity = currentQuantity - quantity;
 
