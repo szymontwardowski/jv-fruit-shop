@@ -1,6 +1,7 @@
 package core.basesyntax;
 
 import core.basesyntax.model.FruitTransaction;
+import core.basesyntax.service.CsvParser;
 import core.basesyntax.service.FileReader;
 import core.basesyntax.service.FileWriter;
 import core.basesyntax.service.ReportGenerator;
@@ -14,7 +15,6 @@ import core.basesyntax.service.operation.OperationHandler;
 import core.basesyntax.service.operation.PurchaseOperation;
 import core.basesyntax.service.operation.ReturnOperation;
 import core.basesyntax.service.operation.SupplyOperation;
-import core.basesyntax.service.CsvParser;
 import core.basesyntax.strategy.OperationStrategy;
 import core.basesyntax.strategy.OperationStrategyImpl;
 import java.util.List;

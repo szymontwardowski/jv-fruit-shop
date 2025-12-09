@@ -1,9 +1,8 @@
 package core.basesyntax.service;
 
-import core.basesyntax.service.operation.OperationHandler;
 import core.basesyntax.model.FruitTransaction;
+import core.basesyntax.service.operation.OperationHandler; // Ten był problemem!
 import core.basesyntax.strategy.OperationStrategy;
-
 import java.util.List;
 
 public class ShopServiceImpl implements ShopService {
