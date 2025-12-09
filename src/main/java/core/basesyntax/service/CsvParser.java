@@ -1,7 +1,6 @@
 package core.basesyntax.service;
 
 import core.basesyntax.model.FruitTransaction;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,7 +11,7 @@ public class CsvParser {
 
     public List<FruitTransaction> parse(List<String> rawLines) {
         return rawLines.stream()
-                .skip(1) // Pomijamy nagłówek (pierwszą linię)
+                .skip(1)
                 .map(this::parseLine)
                 .collect(Collectors.toList());
     }
@@ -28,11 +27,13 @@ public class CsvParser {
             String fruit = parts[FRUIT_INDEX].trim();
             int quantity = Integer.parseInt(parts[QUANTITY_INDEX].trim());
 
-            FruitTransaction.Operation operation = FruitTransaction.Operation.getByCode(operationCode);
+            FruitTransaction.Operation operation = FruitTransaction
+                    .Operation.getByCode(operationCode);
 
             return new FruitTransaction(operation, fruit, quantity);
         } catch (Exception e) {
-            throw new RuntimeException("Error parsing line to FruitTransaction: " + line, e);
+            throw new RuntimeException(
+                    "Error parsing line to FruitTransaction: " + line, e);
         }
     }
 }
