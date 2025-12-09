@@ -1,9 +1,8 @@
-package core.basesyntax;
+package core.basesyntax.model;
 
 public class FruitTransaction {
-
     public enum Operation {
-        BALANCE('b'), SUPPLY('S'), RETURN('r'), PURCHASE('p');
+        BALANCE('b'), SUPPLY('s'), RETURN('r'), PURCHASE('p');
 
         private final char code;
 
@@ -13,6 +12,15 @@ public class FruitTransaction {
 
         public char getCode() {
             return code;
+        }
+
+        public static Operation getByCode(char code) {
+            for (Operation operation : values()) {
+                if (operation.code == code) {
+                    return operation;
+                }
+            }
+            throw new RuntimeException("Unknown operation code: " + code);
         }
     }
 

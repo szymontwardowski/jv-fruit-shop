@@ -1,4 +1,7 @@
-package core.basesyntax;
+package core.basesyntax.service.operation;
+
+import core.basesyntax.db.Storage;
+import core.basesyntax.model.FruitTransaction;
 
 import java.util.Map;
 
@@ -22,7 +25,7 @@ public class SupplyOperation implements OperationHandler {
             throw new RuntimeException("Quantity for SUPPLY cannot be negative: " + quantity);
         }
 
-        Map<String, Integer> inventory = Storage.getFruitInventory();
+        Map<String, Integer> inventory = Storage.getFruitStorage();
 
         int currentQuantity = inventory.getOrDefault(fruit, 0);
 

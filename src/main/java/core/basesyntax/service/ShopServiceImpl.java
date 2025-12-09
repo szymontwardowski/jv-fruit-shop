@@ -1,4 +1,8 @@
-package core.basesyntax;
+package core.basesyntax.service;
+
+import core.basesyntax.service.operation.OperationHandler;
+import core.basesyntax.model.FruitTransaction;
+import core.basesyntax.strategy.OperationStrategy;
 
 import java.util.List;
 

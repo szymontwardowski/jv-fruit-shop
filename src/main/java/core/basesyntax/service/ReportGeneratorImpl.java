@@ -1,4 +1,6 @@
-package core.basesyntax;
+package core.basesyntax.service;
+
+import core.basesyntax.db.Storage;
 
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -10,7 +12,7 @@ public class ReportGeneratorImpl implements ReportGenerator {
     @Override
     public String getReport() {
 
-        Map<String, Integer> inventory = Storage.getFruitInventory();
+        Map<String, Integer> inventory = Storage.getFruitStorage();
 
         String reportBody = inventory.entrySet().stream()
                 .map(entry -> entry.getKey() + SEPARATOR + entry.getValue())
