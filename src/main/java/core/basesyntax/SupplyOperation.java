@@ -14,7 +14,8 @@ public class SupplyOperation implements OperationHandler {
         int quantity = transaction.getQuantity();
 
         if (fruit == null || fruit.isEmpty()) {
-            throw new RuntimeException("Fruit name cannot be null or empty in transaction: " + transaction);
+            throw new RuntimeException(
+                    "Fruit name cannot be null or empty in transaction: " + transaction);
         }
 
         if (quantity < 0) {
